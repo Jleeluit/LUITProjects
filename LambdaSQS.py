@@ -20,5 +20,5 @@ def lambda_handler(event, context):
     )
     return {
         'statusCode': 200,
-        'body': json.dumps('Message sent to queue')
+        'body': json.dumps('Message in a bottle sent to SQSqueue :)')
     }
