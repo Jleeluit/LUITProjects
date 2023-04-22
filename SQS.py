@@ -7,7 +7,7 @@ import boto3
 sqs = boto3.resource('sqs')
 
 #Creating sqs queue
-queue = sqs.create_queue(QueueName='Week15Project-sqs-queue')
+queue = sqs.create_queue(QueueName='Week15ProjectSQSqueue')
 
 #print the URL
 print(queue.url)
