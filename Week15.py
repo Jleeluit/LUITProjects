@@ -1,6 +1,5 @@
-#3Sending a message from AWS SQS via Lambda Function with API gateway
+#Create SQS Queue using Python
 
-#1. Create SQS Queue using Python
 #!/usr/bin/env python3.7
 
 #Create a Standard SQS Quene using Python boto3
@@ -16,8 +15,6 @@ queue = sqs.create_queue(QueueName='Week15Project-sqs-queue')
 print(queue.url)
 
 
-#2. Create Lambda Function
-insctruction on Medium post
 
 #3. Edit the Lambda function to send a message to the SQS Queue
 
@@ -45,9 +42,3 @@ def lambda_handler(event, context):
         'statusCode': 200,
         'body': json.dumps('Message in a bottle sent to SQSqueue :D')
     }
-    
-    
-    
-#4. Create an API gateway HTTP API type trigger
-
-
