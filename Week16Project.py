@@ -19,7 +19,7 @@ FROM ubuntu:22.04
 RUN apt-get update
 RUN apt-get -y install python3-pip \
     && pip install boto3
-    
+# Set the default command to tail the /dev/null file   
 ENTRYPOINT ["tail", "-f", "/dev.null'"]
 
 
