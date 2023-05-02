@@ -7,4 +7,4 @@ import boto3
 client = boto3.client('sns') 
 
 #Creating sqs queue
-sns_topic = client.create_topic(Name='Week15ProjectSNSqueue')
+sns_topic = client.create_topic(Name='#Week15ProjectSNSqueue')
