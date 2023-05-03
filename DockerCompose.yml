@@ -1,9 +1,9 @@
-version: "3.9"
+version: '3.9'
 services:
   Redis:
-    image: redis:latest
+    image: 'redis:latest'
     ports:
-      - "6379"
+      - '6379'
     networks:
       - frontend
     deploy:
@@ -13,11 +13,12 @@ services:
       restart_policy:
         condition: on-failure
       placement:
-        constraints: [node.role != manager]
+        constraints:
+          - node.role != manager
   Apache:
-    image: httpd:latest
+    image: 'httpd:latest'
     ports:
-      - "8080:80"
+      - '8080:80'
     networks:
       - frontend
     depends_on:
@@ -29,14 +30,15 @@ services:
       restart_policy:
         condition: on-failure
       placement:
-        constraints: [node.role != manager]
+        constraints:
+          - node.role != manager
   DB:
-    image: postgres:latest
+    image: 'postgres:latest'
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     volumes:
-      - db-data:/var/lib/postgresql/data
+      - 'db-data:/var/lib/postgresql/data'
     networks:
       - backend
     deploy:
@@ -44,9 +46,10 @@ services:
         condition: on-failure
       placement:
         max_replicas_per_node: 1
-        constraints: [node.role != manager]
+        constraints:
+          - node.role != manager
 networks:
-  frontend:
-  backend:
+  frontend: null
+  backend: null
 volumes:
-  db-data:
+  db-data: null
