@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: index-html-configmap1.yaml
+  namespace: default
+data:
+  index.html: |
+    <html>
+    <h1> Welcome there! This is Deployment One, acting as the clothing 👔 and accessories 👓 website. </h1>
+    </html
+    
+    
